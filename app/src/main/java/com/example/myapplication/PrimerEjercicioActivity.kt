@@ -5,7 +5,6 @@ import android.os.Bundle
 import com.example.myapplication.databinding.ActivityPrimerEjercicioBinding
 
 class PrimerEjercicioActivity : AppCompatActivity() {
-    //Hola
 
     private lateinit var binding: ActivityPrimerEjercicioBinding
 
