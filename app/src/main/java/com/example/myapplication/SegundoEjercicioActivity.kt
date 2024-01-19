@@ -30,7 +30,7 @@ class SegundoEjercicioActivity : AppCompatActivity() {
             val intent = Intent(this, SegundoEjercicioActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             val pendingIntent = PendingIntent.getActivity(this, 0, intent,
-                PendingIntent.FLAG_IMMUTABLE)
+                PendingIntent.FLAG_MUTABLE)
 
             val notification = NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.drawable.burger)
