@@ -8,6 +8,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat
 import com.example.myapplication.databinding.ActivityPrimerEjercicioBinding
 
 class PrimerEjercicioActivity : AppCompatActivity() {
@@ -23,21 +24,22 @@ class PrimerEjercicioActivity : AppCompatActivity() {
         binding.btnGenerarNotificacion.setOnClickListener {
 
             createNotificationChannel()
+            val idGenerada = GenerarId.crearIdNotificacion()
 
             val intent = Intent(this, MainActivity::class.java)
             val pendingIntent = PendingIntent.getActivity(this, 0, intent,
                 PendingIntent.FLAG_IMMUTABLE)
 
-            val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+            val builder = NotificationCompat.Builder(this, GenerarId.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_adb)
                 .setContentTitle("Notificación del ejercicio 1")
-                .setStyle(NotificationCompat.BigTextStyle().bigText("Nos invaden los alienígenas!"))
+                .setStyle(NotificationCompat.BigTextStyle().bigText("Nos invaden los alienígenas!\nMi id es ${idGenerada}"))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setAutoCancel(true)
-                .addAction(R.drawable.ic_launcher_foreground, "Ir a la actividad principal", pendingIntent)
+                .addAction(R.drawable.ic_launcher_background, "Ir a la actividad principal", pendingIntent)
 
             val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            notificationManager.notify(NOTIFICATION_ID, builder.build())
+            notificationManager.notify(idGenerada, builder.build())
         }
     }
 
@@ -47,16 +49,11 @@ class PrimerEjercicioActivity : AppCompatActivity() {
         val name = "TestChannel"
         val descriptionText = "TestDescription"
         val importance = NotificationManager.IMPORTANCE_DEFAULT
-        val channel = NotificationChannel(CHANNEL_ID, name, importance)
+        val channel = NotificationChannel(GenerarId.CHANNEL_ID, name, importance)
         channel.description = descriptionText
         // Register the channel with the system
         val notificationManager: NotificationManager =
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.createNotificationChannel(channel)
-    }
-
-    companion object {
-        const val NOTIFICATION_ID = 101
-        const val CHANNEL_ID = "channelID"
     }
 }
