@@ -14,7 +14,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Ejercicio 3"
-        android:padding="15dp"
+        android:padding="14dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/tilTitulo">
     </TextView>
 
@@ -23,6 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        app:layout_constraintBottom_toTopOf="@id/tilTexto"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,6 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tilTitulo"
+        app:layout_constraintBottom_toTopOf="@id/lyIcono"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,6 +72,7 @@
         app:layout_constraintTop_toBottomOf="@id/tilTexto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/lyImagen"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_width="match_parent"
@@ -95,6 +99,7 @@
         app:layout_constraintTop_toBottomOf="@id/lyIcono"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvNumeroBotones"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_width="match_parent"
@@ -120,7 +125,7 @@
         android:id="@+id/tvNumeroBotones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/lyImagen"
+        app:layout_constraintBottom_toTopOf="@id/lyBotones"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginLeft="20dp"
         android:text="Número de botones:">
@@ -128,9 +133,10 @@
 
     <LinearLayout
         android:id="@+id/lyBotones"
-        app:layout_constraintTop_toBottomOf="@id/tvNumeroBotones"
+        app:layout_constraintTop_toBottomOf="@id/lyImagen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tilNombreBotones"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_width="match_parent"
@@ -169,6 +175,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lyBotones"
+        app:layout_constraintBottom_toTopOf="@id/btnEnviarNotificacion"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -23,26 +23,26 @@ class TercerEjercicioActivity : AppCompatActivity() {
     private var iconoSeleccionado = "";
     private var imagenSeleccionada = "";
     private val opcionesIconoSeleccionado = arrayOf(
-        "Icono 1",
-        "Icono 2",
-        "Icono 3"
+        "Estrella",
+        "Correo",
+        "Borrar"
     )
     private val opcionesImagenSeleccionado = arrayOf(
-        "Imagen 1",
-        "Imagen 2",
-        "Imagen 3"
+        "Universo",
+        "Celulas",
+        "Sol"
     )
 
     private val mapaNombresIconos = mapOf(
-        "Icono 1" to android.R.drawable.btn_star,
-        "Icono 2" to android.R.drawable.btn_dialog,
-        "Icono 3" to android.R.drawable.bottom_bar,
+        "Estrella" to android.R.drawable.btn_star,
+        "Correo" to android.R.drawable.ic_dialog_email,
+        "Borrar" to android.R.drawable.ic_delete,
     )
 
     private val mapaNombreImagenes = mapOf(
-        "Imagen 1" to R.drawable.burger,
-        "Imagen 2" to R.drawable.foto_celulas,
-        "Imagen 3" to R.drawable.img_sol,
+        "Universo" to R.drawable.universo,
+        "Celulas" to R.drawable.foto_celulas,
+        "Sol" to R.drawable.img_sol,
     )
 
     private var numeroBotones = 0;
