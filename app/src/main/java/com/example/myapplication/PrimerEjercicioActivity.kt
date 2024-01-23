@@ -26,8 +26,12 @@ class PrimerEjercicioActivity : AppCompatActivity() {
             createNotificationChannel()
             val idGenerada = GenerarId.crearIdNotificacion()
 
-            val intent = Intent(this, MainActivity::class.java)
-            val pendingIntent = PendingIntent.getActivity(this, 0, intent,
+            val intentBoton = Intent(this, MainActivity::class.java)
+            val pendingIntentBoton = PendingIntent.getActivity(this, 0, intentBoton,
+                PendingIntent.FLAG_IMMUTABLE)
+
+            val intentNotifi = Intent(this, PrimerEjercicioActivity::class.java)
+            val pendingIntentNotifi = PendingIntent.getActivity(this, 0, intentNotifi,
                 PendingIntent.FLAG_IMMUTABLE)
 
             val builder = NotificationCompat.Builder(this, GenerarId.CHANNEL_ID)
@@ -36,7 +40,8 @@ class PrimerEjercicioActivity : AppCompatActivity() {
                 .setStyle(NotificationCompat.BigTextStyle().bigText("Nos invaden los alienígenas!\nMi id es ${idGenerada}"))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setAutoCancel(true)
-                .addAction(R.drawable.ic_launcher_background, "Ir a la actividad principal", pendingIntent)
+                .setContentIntent(pendingIntentNotifi)  // Aquí asignamos el PendingIntent al contenido de la notificación
+                .addAction(R.drawable.ic_launcher_background, "Ir a la actividad principal", pendingIntentBoton)
 
             val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.notify(idGenerada, builder.build())
