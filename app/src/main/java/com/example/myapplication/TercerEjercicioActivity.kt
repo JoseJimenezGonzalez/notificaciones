@@ -82,8 +82,6 @@ class TercerEjercicioActivity : AppCompatActivity() {
                 Toast.makeText(this, "falta el titulo", Toast.LENGTH_SHORT).show()
             }else if(texto.isEmpty()){
                 Toast.makeText(this, "falta el texto", Toast.LENGTH_SHORT).show()
-            }else if(numeroBotones != arrayNombres.size){
-                Toast.makeText(this, "no coinciden numero de botones con numero de nombres", Toast.LENGTH_SHORT).show()
             }else if(numeroBotones > 3 || numeroBotones < 0){
                 Toast.makeText(this, "El numero de botones tiene que estar entre 0 y 3", Toast.LENGTH_SHORT).show()
             }else{
